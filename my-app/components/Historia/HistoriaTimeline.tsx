@@ -127,7 +127,7 @@ export default function HistoriaTimeline() {
 
         <div className="historia-timeline-track relative">
           <div
-            className="historia-timeline-line absolute bottom-0 left-[1.125rem] top-0 w-px origin-top scale-y-0 bg-black/15 md:left-6"
+            className="historia-timeline-line absolute bottom-0 left-[1.125rem] top-0 w-px origin-top scale-y-0 bg-royal/25 md:left-6"
             aria-hidden="true"
           />
 
@@ -137,7 +137,7 @@ export default function HistoriaTimeline() {
                 key={item.year + item.title}
                 className="historia-milestone relative grid gap-4 pl-12 md:grid-cols-[8rem_1fr] md:gap-10 md:pl-16"
               >
-                <span className="absolute left-3 top-1.5 h-3 w-3 rounded-full bg-black md:left-[1.125rem]" />
+                <span className="absolute left-3 top-1.5 h-3 w-3 rounded-full bg-royal md:left-[1.125rem]" />
                 <p className="font-display text-2xl font-bold uppercase tracking-[0.06em] text-black md:text-3xl">
                   {item.year}
                 </p>

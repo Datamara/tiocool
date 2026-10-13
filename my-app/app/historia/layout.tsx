@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Mi Historia | Tío Cool",
+  title: "El Tío | Tío Cool",
   description:
-    "Conoce la historia de Luis Lara Esqueda — El Tío Cool. Escritor, coach y mentor en seguros e Inteligencia Artificial.",
+    "La trayectoria de Luis Lara Esqueda, El Tío Cool: la autoridad detrás de la tecnología, los cursos y los libros para asesores.",
 };
 
 export default function HistoriaLayout({ children }: LayoutProps<"/historia">) {

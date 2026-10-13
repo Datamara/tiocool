@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sora",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   title: "Tío Cool",
-  description: "Inteligencia Artificial, Emprendedor, Explorador, Promotor, Coach, Nómada.",
+  description:
+    "Hub de tecnología para la industria de los seguros. Cursos de IA, Datamara Seguros y aprendizaje con Luis Lara.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${spaceGrotesk.variable} h-full antialiased`}>
-      <body className="min-h-full bg-black font-display text-white">{children}</body>
+    <html lang="es" className={`${sora.variable} h-full antialiased`}>
+      <body className="min-h-full bg-white font-body text-black">{children}</body>
     </html>
   );
 }

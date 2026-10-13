@@ -58,10 +58,10 @@ export default function HistoriaStory() {
   return (
     <section
       ref={sectionRef}
-      className="flex min-h-screen max-h-screen flex-col justify-center overflow-hidden bg-[#7A93A8] px-6 py-4 md:px-12 md:py-6 lg:px-16"
+      className="flex min-h-screen max-h-screen flex-col justify-center overflow-hidden bg-lavender px-6 py-4 md:px-12 md:py-6 lg:px-16"
     >
       <div className="mx-auto w-full max-w-[90rem]">
-        <blockquote className="historia-story-quote mb-6 max-w-3xl font-display text-xl font-bold leading-[1.2] tracking-[0.02em] text-white md:mb-8 md:text-2xl lg:text-3xl">
+        <blockquote className="historia-story-quote mb-6 max-w-3xl font-display text-xl font-bold leading-[1.2] tracking-[0.02em] text-black md:mb-8 md:text-2xl lg:text-3xl">
           «La mentalidad te mantiene en el juego; la tecnología te hace
           ganarlo».
         </blockquote>
@@ -69,7 +69,7 @@ export default function HistoriaStory() {
         <div className="historia-story-grid grid items-center gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
           <div className="historia-story-photo relative mx-auto aspect-[3/4] max-h-[34vh] w-full max-w-xs overflow-hidden lg:mx-0 lg:max-h-[42vh] lg:max-w-sm">
             <Image
-              src="/luis/tio_cool_fake4.jpg"
+              src="/about/about_2.jpg"
               alt="Libros y escritura"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -79,38 +79,37 @@ export default function HistoriaStory() {
 
           <div className="space-y-4 md:space-y-5">
             <div className="historia-story-block space-y-2">
-              <h2 className="font-display text-lg font-bold uppercase tracking-[0.04em] text-white md:text-xl">
-                Soy Luis Lara Esqueda
+              <h2 className="font-display text-lg font-bold uppercase tracking-[0.04em] text-black md:text-xl">
+                Luis Lara Esqueda
               </h2>
-              <p className="font-display text-sm font-bold leading-relaxed text-white md:text-base">
-                Nací en Colima en 1959. Escritor apasionado por contar relatos
-                que conectan con la resiliencia, el crecimiento personal y la
-                superación. A través de mis libros, comparto experiencias que
-                reflejan el poder del cambio y la capacidad de reinventarnos
-                ante la adversidad.
+              <p className="font-display text-sm font-bold leading-relaxed text-black md:text-base">
+                Nació en Colima en 1959. Escritor de relatos que conectan con
+                la resiliencia, el crecimiento y la superación. En sus libros
+                comparte experiencias sobre el cambio y la capacidad de
+                reinventarse.
               </p>
             </div>
 
             <div className="historia-story-block space-y-2">
-              <p className="font-display text-sm font-bold leading-relaxed text-white md:text-base">
-                Antes del año 2000 fui director de BBVA Toluca. En el 2000
-                fundé la promotoría Kutsol, donde construí décadas de liderazgo
-                en el sector financiero y asegurador.
+              <p className="font-display text-sm font-bold leading-relaxed text-black md:text-base">
+                Antes del año 2000 fue director de BBVA Toluca. En el 2000
+                fundó la promotoría Kutsol, donde construyó décadas de
+                liderazgo en el sector financiero y asegurador.
               </p>
             </div>
 
             <div className="historia-story-block space-y-2">
-              <p className="font-display text-sm font-bold leading-relaxed text-white md:text-base">
-                Conocido como El Tío Cool, hoy estoy transformando el sector
-                asegurador con Inteligencia Artificial: combino narrativa,
-                coaching y tecnología para que los asesores blinden su
-                mentalidad y multipliquen resultados en la era digital.
+              <p className="font-display text-sm font-bold leading-relaxed text-black md:text-base">
+                Conocido como El Tío Cool, hoy pone la tecnología en manos de
+                los asesores: narrativa, coaching e Inteligencia Artificial
+                para blindar la mentalidad y multiplicar resultados en la era
+                digital.
               </p>
             </div>
 
             <div className="historia-story-block">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.12em] text-white md:text-sm">
-                Heráclito dijo: «Carácter es destino». Este camino lo demuestra
+              <p className="font-display text-xs font-bold uppercase tracking-[0.12em] text-black md:text-sm">
+                Heráclito dijo: «Carácter es destino». Ese camino se lee en
                 cada página, cada conferencia y cada conversación con quienes
                 buscan reinventarse.
               </p>

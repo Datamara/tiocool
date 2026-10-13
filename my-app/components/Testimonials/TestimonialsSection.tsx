@@ -87,7 +87,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-const STAGGER_OFFSETS = [0, 56, 112];
+const STAGGER_CLASS = ["", "md:mt-14", "md:mt-28"];
 
 function Avatar({ name }: { name: string }) {
   const initials = name
@@ -98,7 +98,7 @@ function Avatar({ name }: { name: string }) {
     .toUpperCase();
 
   return (
-    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-[#] bg-[#d8cfc8] font-display text-[10px] font-bold text-black">
+    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-royal/20 bg-lavender font-display text-[10px] font-bold text-royal">
       {initials}
     </div>
   );
@@ -111,12 +111,11 @@ function TestimonialCard({
   testimonial: Testimonial;
   index: number;
 }) {
-  const stagger = STAGGER_OFFSETS[index % STAGGER_OFFSETS.length];
+  const stagger = STAGGER_CLASS[index % STAGGER_CLASS.length];
 
   return (
     <article
-      className="testimonial-card relative z-0 flex min-h-[18rem] w-[14rem] shrink-0 cursor-default flex-col rounded-sm bg-[#eae0dc] p-4 transition-[filter,opacity,transform] duration-1000 ease-out will-change-[filter,opacity,transform] group-hover/testimonials:scale-[0.98] group-hover/testimonials:opacity-45 group-hover/testimonials:blur-[6px] hover:z-10 hover:scale-100 hover:opacity-100 hover:blur-none md:min-h-[20rem] md:w-[16.5rem] md:p-5"
-      style={{ marginTop: stagger }}
+      className={`testimonial-card relative z-0 flex min-h-[15rem] w-[13.5rem] shrink-0 cursor-default flex-col rounded-sm bg-white p-4 transition-[filter,opacity,transform] duration-1000 ease-out will-change-[filter,opacity,transform] group-hover/testimonials:scale-[0.98] group-hover/testimonials:opacity-45 group-hover/testimonials:blur-[6px] hover:z-10 hover:scale-100 hover:opacity-100 hover:blur-none sm:min-h-[18rem] sm:w-[14rem] md:min-h-[20rem] md:w-[16.5rem] md:p-5 ${stagger}`}
     >
       <div className="mb-4 flex flex-col gap-3">
         <Avatar name={testimonial.name} />
@@ -184,17 +183,17 @@ export default function TestimonialsSection() {
     <section
       ref={sectionRef}
       id="comentarios"
-      className="relative bg-[#7A93A8] px-6 py-16 md:px-12 md:py-20 lg:px-16"
+      className="relative flex min-h-dvh flex-col overflow-x-clip bg-lavender px-5 py-10 sm:px-6 sm:py-16 md:px-12 md:py-20 lg:px-16"
     >
-      <div className="mx-auto flex min-h-screen max-w-[90rem] flex-col">
+      <div className="mx-auto flex w-full max-w-[90rem] flex-1 flex-col">
         <div className="mb-10 md:mb-14">
-          <h2 className="font-display text-4xl font-bold uppercase tracking-[0.04em] text-white md:text-5xl lg:text-6xl">
+          <h2 className="font-display text-3xl font-bold uppercase tracking-[0.04em] text-black sm:text-4xl md:text-5xl lg:text-6xl">
             Comentarios
           </h2>
-          <div className="mt-6 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-white/25">
+          <div className="mt-6 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-white">
             <div
               ref={progressRef}
-              className="h-full w-full origin-left scale-x-[0.04] rounded-full bg-white"
+              className="h-full w-full origin-left scale-x-[0.04] rounded-full bg-royal"
             />
           </div>
         </div>

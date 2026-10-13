@@ -26,20 +26,11 @@ export default function AboutSection() {
         defaults: { ease: "power3.out" },
       });
 
-      tl.from(".about-label", {
-        y: 24,
+      tl.from(".about-quote", {
+        y: 60,
         opacity: 0,
-        duration: 0.7,
+        duration: 1,
       })
-        .from(
-          ".about-quote",
-          {
-            y: 60,
-            opacity: 0,
-            duration: 1,
-          },
-          "-=0.4",
-        )
         .from(
           ".about-quote-line",
           {
@@ -88,34 +79,31 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       id="historia"
-      className="relative flex min-h-screen flex-col justify-center bg-[#051f20] px-6 py-12 md:px-12 md:py-16 lg:px-16"
+      className="relative flex flex-col justify-center bg-white px-5 py-16 sm:px-6 md:min-h-screen md:px-12 md:py-16 lg:px-16"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="flex max-w-xl flex-col gap-8 md:gap-10">
-          <blockquote className="about-quote font-display text-2xl font-bold leading-[1.12] tracking-[0.02em] text-white/85 md:text-3xl lg:text-4xl">
+          <blockquote className="about-quote font-display text-xl font-bold leading-[1.15] tracking-[0.02em] text-black sm:text-2xl md:text-3xl lg:text-4xl">
             «La mentalidad te mantiene en el juego; la tecnología te hace
             ganarlo».
           </blockquote>
 
           <span
-            className="about-quote-line block h-px w-16 bg-white/25"
+            className="about-quote-line block h-px w-16 bg-royal"
             aria-hidden="true"
           />
 
           <div className="about-bio flex flex-col gap-5">
-            <div className="max-w-sm space-y-2 font-display text-sm leading-relaxed md:text-base">
-              <p className="text-white">
-                Libros para blindar tu mentalidad.
-              </p>
-              <p className="text-white">
-                Cursos para multiplicar resultados con IA.
-              </p>
+            <div className="max-w-sm space-y-2 font-display text-sm leading-relaxed text-black/70 md:text-base">
+              <p>Libros para blindar tu mentalidad.</p>
+              <p>Cursos para multiplicar resultados con IA.</p>
+              <p>Software para trabajar el negocio con tecnología.</p>
             </div>
             <Link
               href="/historia"
-              className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-white transition-colors hover:text-white md:text-xs"
+              className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal transition-colors hover:text-azure md:text-xs"
             >
-              Mi historia
+              El Tío
             </Link>
           </div>
         </div>
@@ -123,7 +111,7 @@ export default function AboutSection() {
         <div className="about-portrait relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden sm:max-w-sm lg:mx-0 lg:max-w-md">
           <div className="about-portrait-image relative h-full w-full">
             <Image
-              src="/luis/tio_cool_fake2.jpg"
+              src="/home/main.jpg"
               alt="Luis Lara, El Tío Cool"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

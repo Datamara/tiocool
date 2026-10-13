@@ -27,18 +27,18 @@ export default function LibrosHero() {
       className="bg-white px-6 pb-12 pt-4 md:px-12 md:pb-16 lg:px-16"
     >
       <div className="mx-auto max-w-[90rem]">
-        <p className="libros-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-black/50 md:text-xs">
-          Luis Lara Esqueda · El Tío Cool
+        <p className="libros-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
+          Herramientas
         </p>
         <h1 className="libros-hero-title mt-6 font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-black md:text-7xl lg:text-8xl">
           Libros
         </h1>
         <p className="libros-hero-sub mt-6 max-w-2xl font-display text-base font-bold leading-relaxed text-black/75 md:text-xl">
-          Historias que inspiran, transforman y dejan huella. Pasa el cursor
-          sobre cada portada para descubrir la descripción y comprar.
+          Mentalidad y criterio para el asesor. Pasa el cursor sobre cada
+          portada para leer y comprar.
         </p>
         <span
-          className="libros-hero-line mt-8 block h-px w-32 origin-left bg-black/25"
+          className="libros-hero-line mt-8 block h-px w-32 origin-left bg-royal"
           aria-hidden="true"
         />
       </div>

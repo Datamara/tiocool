@@ -55,14 +55,14 @@ export default function AiBackground({ variant = "section" }: AiBackgroundProps)
       <div
         className={`ai-orb absolute rounded-full blur-3xl ${
           variant === "hero"
-            ? "-right-24 top-1/4 h-80 w-80 bg-white/[0.03]"
-            : "-left-32 bottom-0 h-64 w-64 bg-white/[0.02]"
+            ? "-right-24 top-1/4 h-80 w-80 bg-azure/15"
+            : "-left-32 bottom-0 h-64 w-64 bg-royal/10"
         }`}
       />
       {variant === "hero" && (
-        <div className="ai-orb absolute -left-16 bottom-1/4 h-56 w-56 rounded-full bg-white/[0.02] blur-3xl" />
+        <div className="ai-orb absolute -left-16 bottom-1/4 h-56 w-56 rounded-full bg-royal/10 blur-3xl" />
       )}
-      <div className="ai-line absolute inset-x-6 top-0 h-px bg-white/10 md:inset-x-12 lg:inset-x-16" />
+      <div className="ai-line absolute inset-x-6 top-0 h-px bg-royal/25 md:inset-x-12 lg:inset-x-16" />
     </div>
   );
 }

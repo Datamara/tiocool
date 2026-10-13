@@ -172,15 +172,15 @@ export default function LibrosShop({ books, defaultBookId }: LibrosShopProps) {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#070707] px-6 py-16 md:px-12 md:py-24 lg:px-16"
+      className="bg-white px-6 py-16 md:px-12 md:py-24 lg:px-16"
     >
       <div className="mx-auto flex max-w-[90rem] flex-col items-center gap-12 md:gap-16">
         <div className="libros-shop-intro max-w-3xl space-y-4 text-center">
-          <p className="font-display text-lg font-bold leading-relaxed text-white md:text-xl">
+          <p className="font-display text-lg font-bold leading-relaxed text-black md:text-xl">
             Esta es una lección clave que enseño en mis libros de seguros para
             construir una confianza sólida.
           </p>
-          <p className="font-display text-sm font-bold leading-relaxed text-white/70 md:text-base">
+          <p className="font-display text-sm font-bold leading-relaxed text-black/70 md:text-base">
             Sin embargo, hoy en día, la IA —y cómo usas la tecnología— da forma
             a cómo las personas te reconocen, confían en ti y haces que tu
             negocio crezca.
@@ -202,13 +202,13 @@ export default function LibrosShop({ books, defaultBookId }: LibrosShopProps) {
           ))}
         </div>
 
-        <p className="font-display text-[10px] font-bold uppercase tracking-[0.18em] text-white/40">
+        <p className="font-display text-[10px] font-bold uppercase tracking-[0.18em] text-black/45">
           Precios referencia ·{" "}
           <Link
             href="https://www.tiocool.org/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/60 underline-offset-2 hover:text-white hover:underline"
+            className="text-royal underline-offset-2 hover:text-azure hover:underline"
           >
             tiocool.org
           </Link>

@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar/Navbar";
 
 export default function CursosPage() {
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       <Navbar theme="dark" />
       <main>
         <CursosHero />

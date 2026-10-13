@@ -2,14 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const WORDS = [
-  "Inteligencia Artificial",
-  "Emprendedor",
-  "Explorador",
-  "Promotor",
-  "Coach",
-  "Nómada",
-];
+const WORDS = ["Curso de IA", "Datamara Seguros", "Aprende en el blog"];
 
 export default function RotatingText() {
   const [index, setIndex] = useState(0);
@@ -35,13 +28,13 @@ export default function RotatingText() {
   }, []);
 
   return (
-    <h1
-      className={`relative z-20 font-display text-center text-3xl font-bold uppercase leading-tight tracking-[0.06em] text-WHITE transition-all duration-500 ease-out md:text-5xl lg:text-6xl ${
+    <p
+      className={`relative z-20 max-w-[18rem] font-title text-base font-bold uppercase leading-tight tracking-[0.06em] text-royal transition-all duration-500 ease-out sm:max-w-none sm:text-xl md:text-2xl md:tracking-[0.08em] xl:text-xl ${
         visible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
       }`}
       aria-live="polite"
     >
       {WORDS[index]}
-    </h1>
+    </p>
   );
 }

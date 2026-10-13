@@ -68,21 +68,21 @@ export default function HistoriaBooks() {
   return (
     <section
       ref={sectionRef}
-      className="bg-black px-6 py-20 md:px-12 md:py-28 lg:px-16"
+      className="bg-white px-6 py-20 md:px-12 md:py-28 lg:px-16"
     >
       <div className="mx-auto max-w-[90rem]">
         <div className="historia-books-heading mb-14 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-white/45">
+            <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal">
               Biblioteca
             </p>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.03em] text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase tracking-[0.03em] text-black md:text-5xl">
               Mis libros
             </h2>
           </div>
           <Link
             href="/libros"
-            className="font-display text-xs font-bold uppercase tracking-[0.2em] text-white transition-opacity hover:opacity-70"
+            className="font-display text-xs font-bold uppercase tracking-[0.2em] text-royal transition-colors hover:text-azure"
           >
             Ver en la landing →
           </Link>
@@ -100,10 +100,10 @@ export default function HistoriaBooks() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <h3 className="mt-4 font-display text-sm font-bold uppercase tracking-[0.06em] text-white md:text-base">
+              <h3 className="mt-4 font-display text-sm font-bold uppercase tracking-[0.06em] text-black md:text-base">
                 {book.title}
               </h3>
-              <p className="mt-2 font-display text-[11px] font-bold leading-snug text-white/60 md:text-xs">
+              <p className="mt-2 font-display text-[11px] font-bold leading-snug text-black/60 md:text-xs">
                 {book.quote}
               </p>
             </article>

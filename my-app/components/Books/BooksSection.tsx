@@ -88,7 +88,7 @@ function BookCard({
   return (
     <div
       ref={cardRef}
-      className="book-card relative z-0 h-[clamp(14rem,36vh,24rem)] w-[200px] shrink-0 overflow-hidden bg-zinc-900 will-change-transform md:h-[clamp(16rem,40vh,26rem)] md:w-[260px]"
+      className="book-card relative z-0 h-56 w-40 shrink-0 overflow-hidden bg-zinc-900 will-change-transform sm:h-[clamp(14rem,36vh,24rem)] sm:w-[200px] md:h-[clamp(16rem,40vh,26rem)] md:w-[260px]"
       onMouseEnter={onActivate}
       onMouseLeave={onDeactivate}
       tabIndex={0}
@@ -97,7 +97,7 @@ function BookCard({
     >
       {isCourse ? (
         <div
-          className={`absolute inset-0 bg-gradient-to-br from-cyan-400 via-indigo-600 to-slate-950 transition-transform duration-700 ${
+          className={`absolute inset-0 bg-gradient-to-br from-azure via-royal to-[#041433] transition-transform duration-700 ${
             isActive ? "scale-105" : "scale-100"
           }`}
         >
@@ -123,10 +123,25 @@ function BookCard({
         />
       )}
 
+      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 bg-gradient-to-t from-black via-black/75 to-transparent p-3 md:hidden">
+        <h3 className="font-display text-[11px] font-bold uppercase leading-tight tracking-[0.05em] text-white">
+          {book.title}
+        </h3>
+        <Link
+          href={book.buyUrl}
+          {...(isExternalLink
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+          className="font-display text-[10px] font-bold uppercase tracking-[0.16em] text-white underline decoration-white/40 underline-offset-4"
+        >
+          {isCourse ? (book.ctaLabel ?? "Ver curso") : "Comprar"}
+        </Link>
+      </div>
+
       <div
         ref={contentRef}
-        className={`absolute inset-0 flex flex-col justify-between bg-black/55 p-5 md:p-6 ${
-          isActive ? "opacity-100" : "opacity-0"
+        className={`absolute inset-0 hidden flex-col justify-between bg-black/55 p-5 md:flex md:p-6 ${
+          isActive ? "md:opacity-100" : "md:opacity-0"
         }`}
       >
         <Link
@@ -143,7 +158,7 @@ function BookCard({
 
         <div className="space-y-2">
           {isCourse && (
-            <p className="font-display text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-300">
+            <p className="font-display text-[10px] font-bold uppercase tracking-[0.18em] text-[#d5e4ff]">
               {book.priceNote}
             </p>
           )}
@@ -217,12 +232,9 @@ export default function BooksSection({
         const overflow = Math.max(trackWidth - viewportWidth, 0);
 
         return {
-          // Track fully off-screen to the right; scroll pulls it in leftward
           startX: viewportWidth + 64,
           endX:
-            overflow > 0
-              ? -overflow / 2
-              : (viewportWidth - trackWidth) / 2,
+            overflow > 0 ? -overflow : (viewportWidth - trackWidth) / 2,
         };
       };
 
@@ -267,25 +279,25 @@ export default function BooksSection({
     <section
       ref={sectionRef}
       id="libros"
-      className="flex min-h-screen flex-col justify-center bg-black px-6 py-10 md:px-12 md:py-12 lg:px-16"
+      className="flex min-h-dvh flex-col justify-start overflow-x-clip bg-white px-4 py-12 sm:px-6 md:justify-center md:px-12 md:py-12 lg:px-16"
     >
       <div className="mx-auto flex w-full max-w-[90rem] flex-col items-center justify-center gap-8 md:gap-10 lg:gap-12">
         <div className="books-copy max-w-6xl space-y-4 text-center md:space-y-6">
           <RevealWords
-            className="books-heading font-display text-2xl font-bold leading-[1.15] tracking-[0.01em] text-wehit md:text-4xl lg:text-3xl"
+            className="books-heading font-display text-xl font-bold leading-[1.15] tracking-[0.01em] text-black sm:text-2xl md:text-4xl lg:text-3xl"
             wordClassName="books-heading-word"
-            text="Esta es una lección clave que enseño en mis libros de seguros para construir una confianza sólida."
+            text="Los libros son la herramienta para construir confianza en seguros."
           />
           <RevealWords
-            className="books-subheading font-display text-lg font-bold leading-[1.2] tracking-[0.01em] text-white md:text-2xl lg:text-md"
+            className="books-subheading font-display text-base font-bold leading-[1.25] tracking-[0.01em] text-black/70 sm:text-lg md:text-2xl"
             wordClassName="books-subheading-word"
-            text="Sin embargo, hoy en día, la IA —y cómo usas la tecnología— da forma a cómo las personas te reconocen, confían en ti y haces que tu negocio crezca."
+            text="La tecnología, y cómo la usas, define cómo te reconocen, cómo confían en ti y cómo crece tu negocio."
           />
         </div>
 
         <div
           ref={viewportRef}
-          className="books-gallery relative w-full overflow-hidden pb-1"
+          className="books-gallery relative w-full overflow-hidden py-16 md:py-24"
           onMouseLeave={() => setActiveId(defaultBookId)}
         >
           <div

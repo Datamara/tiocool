@@ -42,16 +42,16 @@ export default function CourseCountdown() {
   }, []);
 
   return (
-    <div className="course-countdown grid grid-cols-4 gap-px overflow-hidden border border-white/10 bg-white/10">
+    <div className="course-countdown grid grid-cols-4 gap-px overflow-hidden bg-royal/20">
       {UNITS.map(({ key, label }) => (
         <div
           key={key}
-          className="flex flex-col items-center bg-black px-2 py-4 md:px-4 md:py-5"
+          className="flex min-w-0 flex-col items-center bg-white px-1 py-3 sm:px-2 sm:py-4 md:px-4 md:py-5"
         >
-          <span className="font-display text-2xl font-bold tabular-nums leading-none text-white md:text-4xl">
+          <span className="font-display text-xl font-bold tabular-nums leading-none text-royal sm:text-2xl md:text-4xl">
             {String(timeLeft[key]).padStart(2, "0")}
           </span>
-          <span className="mt-2 font-display text-[8px] font-bold uppercase tracking-[0.22em] text-white/40 md:text-[10px]">
+          <span className="mt-2 font-display text-[8px] font-bold uppercase tracking-[0.12em] text-black/45 sm:tracking-[0.18em] md:text-[10px] md:tracking-[0.22em]">
             {label}
           </span>
         </div>

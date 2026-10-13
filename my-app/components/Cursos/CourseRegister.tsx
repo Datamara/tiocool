@@ -71,35 +71,35 @@ export default function CourseRegister() {
   }
 
   const inputClass =
-    "w-full border border-white/10 bg-transparent px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-white placeholder:text-white/30 outline-none transition-colors focus:border-white/40";
+    "w-full border border-black/15 bg-white px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-black placeholder:text-black/35 outline-none transition-colors focus:border-royal";
 
   return (
     <section
       ref={sectionRef}
       id="registro"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-black px-6 py-16 md:px-12 md:py-20 lg:px-16"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-lavender px-6 py-16 md:px-12 md:py-20 lg:px-16"
     >
       <AiBackground variant="section" />
 
       <div className="relative mx-auto grid w-full max-w-[90rem] items-start gap-12 lg:grid-cols-2 lg:gap-20">
         <div className="cursos-register-copy space-y-6 md:space-y-8">
-          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-white/40">
+          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal">
             Acceso anticipado
           </p>
 
-          <h2 className="font-display text-3xl font-bold uppercase leading-[0.95] tracking-[0.03em] text-white md:text-5xl lg:text-6xl">
+          <h2 className="font-display text-3xl font-bold uppercase leading-[0.95] tracking-[0.03em] text-black md:text-5xl lg:text-6xl">
             Registra tu
             <br />
             interés
           </h2>
 
-          <p className="max-w-md font-display text-sm font-bold leading-relaxed text-white/55 md:text-base">
+          <p className="max-w-md font-display text-sm font-bold leading-relaxed text-black/70 md:text-base">
             Sé de los primeros en acceder. Te avisamos cuando abramos
             inscripciones.
           </p>
 
           <div className="max-w-md space-y-3 pt-2">
-            <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-white/35">
+            <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal">
               10 de diciembre, 2026
             </p>
             <CourseCountdown />
@@ -108,14 +108,14 @@ export default function CourseRegister() {
 
         <div
           ref={formRef}
-          className="border border-white/10 p-5 md:p-8"
+          className="border border-royal/15 bg-white p-5 md:p-8"
         >
           {submitted ? (
             <div className="flex min-h-[18rem] flex-col items-start justify-center md:min-h-[22rem]">
-              <p className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-white md:text-3xl">
+              <p className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-black md:text-3xl">
                 ¡Gracias!
               </p>
-              <p className="mt-4 max-w-sm font-display text-sm font-bold leading-relaxed text-white/50">
+              <p className="mt-4 max-w-sm font-display text-sm font-bold leading-relaxed text-black/60">
                 Hemos recibido tu interés. Te contactaremos pronto con los
                 detalles del curso.
               </p>
@@ -171,7 +171,7 @@ export default function CourseRegister() {
               <button
                 type="submit"
                 disabled={isPending}
-                className="w-full border border-white bg-white px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.22em] text-black transition-opacity hover:opacity-85 disabled:opacity-50 sm:w-auto"
+                className="w-full bg-royal px-6 py-3.5 font-display text-xs font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-azure disabled:opacity-50 sm:w-auto"
               >
                 {isPending ? "Enviando..." : "Registrar interés"}
               </button>

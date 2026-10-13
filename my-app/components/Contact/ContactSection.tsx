@@ -63,7 +63,7 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
   }
 
   const inputClass =
-    "w-full border border-black/15 bg-transparent px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-black placeholder:text-black/35 outline-none focus:border-black";
+    "w-full border border-black/15 bg-white px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-black placeholder:text-black/35 outline-none focus:border-royal";
 
   return (
     <section
@@ -77,13 +77,13 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
               Contacto
             </p>
             <h2 className="font-display text-4xl font-bold uppercase leading-[1.05] tracking-[0.03em] text-black md:text-5xl lg:text-6xl">
-              ¿Quieres
+              Escribe
               <br />
-              contactarme?
+              al hub
             </h2>
             <p className="max-w-xl font-display text-base font-bold leading-relaxed text-black/75 md:text-lg">
-              Escríbeme para entrevistas, conferencias, colaboraciones o
-              cualquier consulta. Estaré en contacto lo antes posible.
+              Cursos, software o una conversación con Luis. Te responden lo
+              antes posible.
             </p>
             <a
               href="tel:+529992338183"
@@ -100,8 +100,7 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
                   ¡Gracias!
                 </p>
                 <p className="mt-4 font-display text-sm font-bold leading-relaxed text-black/65">
-                  Hemos recibido tu mensaje. Estaré en contacto lo antes
-                  posible.
+                  Hemos recibido tu mensaje. Te responden lo antes posible.
                 </p>
               </div>
             ) : (
@@ -150,7 +149,7 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="w-full bg-black px-6 py-4 font-display text-xs font-bold uppercase tracking-[0.22em] text-white transition-opacity hover:opacity-80 disabled:opacity-50 sm:w-auto"
+                  className="w-full bg-royal px-6 py-4 font-display text-xs font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-azure disabled:opacity-50 sm:w-auto"
                 >
                   {isPending ? "Enviando..." : "Enviar"}
                 </button>

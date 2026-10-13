@@ -13,14 +13,14 @@ const INSTRUCTORS = [
   {
     name: "Luis Lara Esqueda",
     role: "El Tío Cool",
-    bio: "Coach, escritor y referente en seguros. Mentalidad humana y estrategia para asesores y líderes.",
+    bio: "Comparte mentalidad y tecnología con asesores y líderes del sector.",
     image: "/luis/luislara.jpeg",
     local: true,
   },
   {
     name: "Bernardo García Zermeño",
-    role: "Fundador de Datamara",
-    bio: "Software y datos conectados con IA. Soluciones que escalan con precisión.",
+    role: "Software en Datamara",
+    bio: "Construye el software de Datamara Seguros. Soluciones que escalan con precisión.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
     local: false,
@@ -107,22 +107,22 @@ export default function CourseInstructors() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-black"
+      className="relative min-h-screen overflow-hidden bg-white"
     >
       <AiBackground variant="section" />
 
       <div className="relative mx-auto flex min-h-screen max-w-[90rem] flex-col px-6 py-12 md:px-12 md:py-16 lg:px-16">
         <div className="cursos-instructors-heading mb-8 md:mb-12">
-          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-white/40">
+          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal">
             Mentores
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-white md:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-black md:text-5xl">
             Quienes imparten
           </h2>
-          <div className="mt-5 h-px w-full max-w-md overflow-hidden bg-white/10">
+          <div className="mt-5 h-px w-full max-w-md overflow-hidden bg-lavender">
             <div
               ref={progressRef}
-              className="h-full w-full origin-left scale-x-[0.04] bg-white/60"
+              className="h-full w-full origin-left scale-x-[0.04] bg-royal"
             />
           </div>
         </div>
@@ -135,10 +135,10 @@ export default function CourseInstructors() {
             {INSTRUCTORS.map((instructor, index) => (
               <article
                 key={instructor.name}
-                className="cursos-instructor-card relative flex min-h-[min(62vh,34rem)] w-[min(82vw,20rem)] shrink-0 flex-col border border-white/10 will-change-transform md:w-[min(38vw,24rem)]"
+                className="cursos-instructor-card relative flex min-h-[min(62vh,34rem)] w-[min(82vw,20rem)] shrink-0 flex-col border border-royal/15 bg-white will-change-transform md:w-[min(38vw,24rem)]"
                 style={{ marginTop: STAGGER[index % STAGGER.length] }}
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-white/5">
+                <div className="relative aspect-[4/5] overflow-hidden bg-lavender">
                   <Image
                     src={instructor.image}
                     alt={instructor.name}
@@ -149,14 +149,14 @@ export default function CourseInstructors() {
                     onLoad={handleImageLoad}
                   />
                 </div>
-                <div className="space-y-2 border-t border-white/10 p-5 md:p-6">
-                  <h3 className="font-display text-base font-bold uppercase leading-tight tracking-[0.04em] text-white md:text-lg">
+                <div className="space-y-2 border-t border-royal/15 p-5 md:p-6">
+                  <h3 className="font-display text-base font-bold uppercase leading-tight tracking-[0.04em] text-black md:text-lg">
                     {instructor.name}
                   </h3>
-                  <p className="font-display text-[10px] font-bold uppercase tracking-[0.14em] text-white/45 md:text-xs">
+                  <p className="font-display text-[10px] font-bold uppercase tracking-[0.14em] text-royal md:text-xs">
                     {instructor.role}
                   </p>
-                  <p className="font-display text-xs font-bold leading-relaxed text-white/55 md:text-sm">
+                  <p className="font-display text-xs font-bold leading-relaxed text-black/70 md:text-sm">
                     {instructor.bio}
                   </p>
                 </div>

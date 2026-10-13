@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog | Tío Cool",
+  title: "Aprende | Tío Cool",
   description:
-    "Artículos de Luis Lara Esqueda sobre seguros, Inteligencia Artificial, coaching y transformación personal.",
+    "Ideas para asesores sobre seguros, Inteligencia Artificial y cómo aplicar la tecnología en el negocio.",
 };
 
 export default function BlogLayout({ children }: LayoutProps<"/blog">) {

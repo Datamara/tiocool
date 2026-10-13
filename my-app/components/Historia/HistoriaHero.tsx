@@ -31,22 +31,23 @@ export default function HistoriaHero() {
       <div className="mx-auto grid max-w-[90rem] items-end gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div className="space-y-6 md:space-y-8">
           <h1 className="historia-hero-title font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-black md:text-7xl lg:text-8xl">
-            Mi
+            El
             <br />
-            Historia
+            Tío
           </h1>
           <p className="historia-hero-sub max-w-xl font-display text-base font-bold leading-relaxed text-black md:text-xl">
-            Historias que inspiran, transforman y dejan huella.
+            La trayectoria detrás de la tecnología que Luis comparte con los
+            asesores.
           </p>
           <span
-            className="historia-hero-line block h-px w-32 origin-left bg-black/25"
+            className="historia-hero-line block h-px w-32 origin-left bg-royal"
             aria-hidden="true"
           />
         </div>
 
         <div className="historia-hero-image relative aspect-[4/5] w-full max-w-lg justify-self-end overflow-hidden lg:max-w-none">
           <Image
-            src="/luis/tio_cool_fake3.jpg"
+            src="/about/about_hero.jpg"
             alt="Luis Lara Esqueda, El Tío Cool"
             fill
             priority

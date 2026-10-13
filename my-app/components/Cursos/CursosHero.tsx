@@ -86,29 +86,29 @@ export default function CursosHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-black"
+      className="relative min-h-screen overflow-hidden bg-white"
     >
       <AiBackground variant="hero" />
 
       <div className="cursos-hero-inner relative z-10 mx-auto flex min-h-screen max-w-[90rem] flex-col justify-center px-6 py-4 md:px-12 md:py-8 lg:px-16">
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div className="max-w-3xl space-y-8 md:space-y-10">
-            <p className="cursos-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-white/45 md:text-xs">
+            <p className="cursos-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
               Próximo lanzamiento · 10 dic 2026
             </p>
 
-            <h1 className="font-display text-4xl font-bold uppercase leading-[0.92] tracking-[0.02em] text-white md:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="font-display text-4xl font-bold uppercase leading-[0.92] tracking-[0.02em] text-black md:text-6xl lg:text-7xl xl:text-8xl">
               <SplitLine>Curso Completo</SplitLine>
-              <SplitLine className="text-blue-400">de IA</SplitLine>
+              <SplitLine className="text-royal">de IA</SplitLine>
             </h1>
 
-            <p className="cursos-hero-sub max-w-lg font-display text-sm font-bold leading-relaxed text-white/55 md:text-base">
+            <p className="cursos-hero-sub max-w-lg font-display text-sm font-bold leading-relaxed text-black/70 md:text-base">
               Inteligencia Artificial aplicada al sector asegurador y financiero.
               Tres mentores. Una sola transformación.
             </p>
 
             <div className="cursos-hero-countdown-wrap max-w-md space-y-3">
-              <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-white/35">
+              <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal">
                 Cuenta regresiva
               </p>
               <CourseCountdown />
@@ -116,8 +116,8 @@ export default function CursosHero() {
           </div>
 
           <div className="cursos-hero-visual relative mx-auto flex aspect-square w-full max-w-xs items-center justify-center md:max-w-sm lg:max-w-md">
-            <div className="cursos-hero-orbit-outer absolute inset-0 rounded-full border border-dashed border-white/15" />
-            <div className="cursos-hero-orbit-inner absolute inset-8 rounded-full border border-white/10 md:inset-10" />
+            <div className="cursos-hero-orbit-outer absolute inset-0 rounded-full border border-dashed border-royal/25" />
+            <div className="cursos-hero-orbit-inner absolute inset-8 rounded-full border border-royal/15 md:inset-10" />
             <div className="relative z-10 aspect-square w-[72%]">
               <Image
                 src="/luis/curso_ia.jpg"
@@ -131,7 +131,7 @@ export default function CursosHero() {
           </div>
         </div>
 
-        <p className="cursos-hero-scroll-hint mt-16 font-display text-[10px] font-bold uppercase tracking-[0.28em] text-white/25 md:mt-20">
+        <p className="cursos-hero-scroll-hint mt-16 font-display text-[10px] font-bold uppercase tracking-[0.28em] text-black/35 md:mt-20">
           Scroll
         </p>
       </div>

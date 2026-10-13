@@ -42,12 +42,15 @@ export default function LibrosGrid({ books }: LibrosGridProps) {
     >
       <div className="mx-auto max-w-[90rem]">
         <div className="mb-12 md:mb-16">
-          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-black/45">
-            Catálogo completo
+          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal">
+            Herramientas
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold uppercase tracking-[0.03em] text-black md:text-4xl">
-            Compara y elige
+            Libros para el asesor
           </h2>
+          <p className="mt-4 max-w-xl font-display text-sm font-bold leading-relaxed text-black/70 md:text-base">
+            Mentalidad y criterio para el negocio. Elige el que te toca ahora.
+          </p>
         </div>
 
         <ul className="grid gap-8 md:grid-cols-2">
@@ -94,7 +97,7 @@ export default function LibrosGrid({ books }: LibrosGridProps) {
                     href={book.buyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full bg-black px-5 py-2.5 font-display text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-75 md:text-xs"
+                    className="rounded-full bg-royal px-5 py-2.5 font-display text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-colors hover:bg-azure md:text-xs"
                   >
                     Comprar
                   </Link>

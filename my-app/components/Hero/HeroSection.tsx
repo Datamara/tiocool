@@ -1,23 +1,8 @@
-"use client";
-
+import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import RotatingText from "@/components/Hero/RotatingText";
-import RippleEffect from "@/components/Hero/RippleEffect";
 
-const HERO_IMAGE = "/luis/tio_cool_fake.jpg";
-
-const RIPPLE_STYLE = {
-  backgroundImage: `url(${HERO_IMAGE})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-} as const;
-
-const RIPPLE_OPTIONS = {
-  imageUrl: HERO_IMAGE,
-  perturbance: 0.05,
-  dropRadius: 80,
-  interactive: true,
-} as const;
+const HERO_IMAGE = "/home/tio_hero.jpg";
 
 export default function HeroSection() {
   return (
@@ -27,30 +12,29 @@ export default function HeroSection() {
       </div>
 
       <main className="relative min-h-0 flex-1 overflow-hidden">
-        <div className="absolute inset-0 z-0 grayscale">
-          {/* Imagen estática de respaldo por si WebGL falla */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={RIPPLE_STYLE}
-            aria-hidden="true"
-          />
+        <Image
+          src={HERO_IMAGE}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top grayscale"
+        />
 
-          <RippleEffect
-            className="z-[2]"
-            style={RIPPLE_STYLE}
-            autoDrops={false}
-            options={RIPPLE_OPTIONS}
-          />
-        </div>
-
-        {/* Overlay encima del ripple; pointer-events-none deja pasar el cursor */}
         <div
           className="pointer-events-none absolute inset-0 z-[3] bg-white/40"
           aria-hidden="true"
         />
 
-        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-6 md:px-12">
-          <RotatingText />
+        <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-6 md:justify-start md:px-16 lg:px-24">
+          <div className="flex max-w-3xl flex-col items-center gap-4 text-center sm:gap-5 md:max-w-xl md:items-start md:gap-7 md:text-left lg:max-w-2xl">
+            <h1 className="font-display text-3xl font-bold uppercase leading-[0.95] tracking-[0.03em] text-black sm:text-4xl md:text-4xl md:tracking-[0.04em] md:text-[#E3E7FC] xl:text-4xl">
+              Tecnología
+              <br />
+              para los seguros
+            </h1>
+            <RotatingText />
+          </div>
         </div>
       </main>
     </section>

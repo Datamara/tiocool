@@ -27,18 +27,17 @@ export default function ContactHero() {
       className="bg-white px-6 pb-12 pt-4 md:px-12 md:pb-16 lg:px-16"
     >
       <div className="mx-auto max-w-[90rem]">
-        <p className="contact-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-black/50 md:text-xs">
-          Luis Lara Esqueda · El Tío Cool
+        <p className="contact-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
+          Para asesores
         </p>
         <h1 className="contact-hero-title mt-6 font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-black md:text-7xl lg:text-8xl">
           Contacto
         </h1>
         <p className="contact-hero-sub mt-6 max-w-2xl font-display text-base font-bold leading-relaxed text-black/75 md:text-xl">
-          Conferencias, entrevistas, colaboraciones o cualquier consulta.
-          Escríbeme y te respondo lo antes posible.
+          Cursos, software o una conversación con Luis. Escribe y te responden.
         </p>
         <span
-          className="contact-hero-line mt-8 block h-px w-32 origin-left bg-black/25"
+          className="contact-hero-line mt-8 block h-px w-32 origin-left bg-royal"
           aria-hidden="true"
         />
       </div>

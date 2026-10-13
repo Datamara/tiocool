@@ -5,16 +5,15 @@ export default function Footer() {
   return (
     <footer
       id="contacto"
-      className="border-t border-white/10 bg-black px-6 py-16 md:px-12 md:py-20 lg:px-16"
+      className="bg-midnight px-6 py-16 text-white md:px-12 md:py-20 lg:px-16"
     >
       <div className="mx-auto flex max-w-[90rem] flex-col gap-12 md:flex-row md:items-end md:justify-between">
         <div className="space-y-4">
-          <p className="font-display text-3xl font-bold uppercase tracking-[0.04em] text-white md:text-4xl">
+          <p className="font-title text-3xl font-bold uppercase tracking-[0.04em] text-white md:text-4xl">
             Tío Cool
           </p>
           <p className="max-w-md font-display text-sm font-bold leading-relaxed text-white/70 md:text-base">
-            Luis Lara Esqueda — Escritor, coach y mentor en seguros e
-            Inteligencia Artificial.
+            Tecnología, cursos y software para asesores.
           </p>
         </div>
 

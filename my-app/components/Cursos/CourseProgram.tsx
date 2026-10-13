@@ -103,22 +103,22 @@ export default function CourseProgram() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-black"
+      className="relative min-h-screen overflow-hidden bg-lavender"
     >
       <AiBackground variant="section" />
 
       <div className="relative mx-auto flex min-h-screen max-w-[90rem] flex-col px-6 py-12 md:px-12 md:py-16 lg:px-16">
         <div className="cursos-program-heading mb-8 md:mb-12">
-          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-white/40">
+          <p className="font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal">
             Programa
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-white md:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-black md:text-5xl">
             Qué aprenderás
           </h2>
-          <div className="mt-5 h-px w-full max-w-md overflow-hidden bg-white/10">
+          <div className="mt-5 h-px w-full max-w-md overflow-hidden bg-white">
             <div
               ref={progressRef}
-              className="h-full w-full origin-left scale-x-[0.04] bg-white/60"
+              className="h-full w-full origin-left scale-x-[0.04] bg-royal"
             />
           </div>
         </div>
@@ -131,12 +131,12 @@ export default function CourseProgram() {
             {MODULES.map((module) => (
               <article
                 key={module.num}
-                className="cursos-module-card flex h-[min(52vh,28rem)] w-[min(78vw,22rem)] shrink-0 flex-col justify-between border border-white/10 p-6 will-change-transform md:h-[min(58vh,32rem)] md:w-[min(42vw,26rem)] md:p-8"
+                className="cursos-module-card flex h-[min(52vh,28rem)] w-[min(78vw,22rem)] shrink-0 flex-col justify-between border border-royal/15 bg-white p-6 will-change-transform md:h-[min(58vh,32rem)] md:w-[min(42vw,26rem)] md:p-8"
               >
-                <span className="font-display text-4xl font-bold tabular-nums text-white/15 md:text-5xl">
+                <span className="font-display text-4xl font-bold tabular-nums text-royal/30 md:text-5xl">
                   {module.num}
                 </span>
-                <h3 className="font-display text-lg font-bold uppercase leading-tight tracking-[0.03em] text-white md:text-xl lg:text-2xl">
+                <h3 className="font-display text-lg font-bold uppercase leading-tight tracking-[0.03em] text-black md:text-xl lg:text-2xl">
                   {module.title}
                 </h3>
               </article>
