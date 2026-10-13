@@ -29,7 +29,7 @@ export default function RotatingText() {
 
   return (
     <p
-      className={`relative z-20 max-w-[18rem] font-title text-base font-bold uppercase leading-tight tracking-[0.06em] text-royal transition-all duration-500 ease-out sm:max-w-none sm:text-xl md:text-2xl md:tracking-[0.08em] xl:text-xl ${
+      className={`relative z-20 max-w-[18rem] font-title text-base font-bold uppercase leading-tight tracking-[0.06em] text-[#E3E7FC] transition-all duration-500 ease-out sm:max-w-none sm:text-xl md:text-2xl md:tracking-[0.08em] xl:text-xl ${
         visible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
       }`}
       aria-live="polite"

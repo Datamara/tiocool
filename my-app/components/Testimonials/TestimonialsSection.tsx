@@ -115,7 +115,7 @@ function TestimonialCard({
 
   return (
     <article
-      className={`testimonial-card relative z-0 flex min-h-[15rem] w-[13.5rem] shrink-0 cursor-default flex-col rounded-sm bg-white p-4 transition-[filter,opacity,transform] duration-1000 ease-out will-change-[filter,opacity,transform] group-hover/testimonials:scale-[0.98] group-hover/testimonials:opacity-45 group-hover/testimonials:blur-[6px] hover:z-10 hover:scale-100 hover:opacity-100 hover:blur-none sm:min-h-[18rem] sm:w-[14rem] md:min-h-[20rem] md:w-[16.5rem] md:p-5 ${stagger}`}
+      className={`testimonial-card relative z-0 flex min-h-[15rem] w-[13.5rem] shrink-0 snap-start cursor-default flex-col rounded-sm bg-white p-4 sm:min-h-[18rem] sm:w-[14rem] md:min-h-[20rem] md:w-[16.5rem] md:p-5 md:transition-[filter,opacity,transform] md:duration-1000 md:ease-out md:will-change-[filter,opacity,transform] md:group-hover/testimonials:scale-[0.98] md:group-hover/testimonials:opacity-45 md:group-hover/testimonials:blur-[6px] md:hover:z-10 md:hover:scale-100 md:hover:opacity-100 md:hover:blur-none ${stagger}`}
     >
       <div className="mb-4 flex flex-col gap-3">
         <Avatar name={testimonial.name} />
@@ -149,31 +149,43 @@ export default function TestimonialsSection() {
       const progress = progressRef.current;
       if (!section || !viewport || !track || !progress) return;
 
-      const getScrollDistance = () =>
-        Math.max(track.scrollWidth - viewport.clientWidth, 0);
+      const setProgress = (value: number) => {
+        progress.style.transform = `scaleX(${Math.max(0.04, value)})`;
+      };
 
-      gsap.to(track, {
-        x: () => -getScrollDistance(),
-        ease: "none",
-        force3D: true,
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${getScrollDistance() * 1.35 + window.innerHeight}`,
-          pin: true,
-          scrub: 2,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-          onUpdate: (self) => {
-            gsap.to(progress, {
-              scaleX: Math.max(0.04, self.progress),
-              transformOrigin: "left center",
-              duration: 0.35,
-              ease: "power2.out",
-              overwrite: true,
-            });
+      const mm = gsap.matchMedia();
+
+      mm.add("(max-width: 767px)", () => {
+        const onScroll = () => {
+          const max = viewport.scrollWidth - viewport.clientWidth;
+          setProgress(max > 0 ? viewport.scrollLeft / max : 1);
+        };
+
+        viewport.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+
+        return () => viewport.removeEventListener("scroll", onScroll);
+      });
+
+      mm.add("(min-width: 768px)", () => {
+        const getScrollDistance = () =>
+          Math.max(track.scrollWidth - viewport.clientWidth, 0);
+
+        gsap.to(track, {
+          x: () => -getScrollDistance(),
+          ease: "none",
+          force3D: true,
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${getScrollDistance() * 1.35 + window.innerHeight}`,
+            pin: true,
+            scrub: 2,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => setProgress(self.progress),
           },
-        },
+        });
       });
     },
     { scope: sectionRef },
@@ -183,7 +195,7 @@ export default function TestimonialsSection() {
     <section
       ref={sectionRef}
       id="comentarios"
-      className="relative flex min-h-dvh flex-col overflow-x-clip bg-lavender px-5 py-10 sm:px-6 sm:py-16 md:px-12 md:py-20 lg:px-16"
+      className="relative flex flex-col overflow-x-clip bg-lavender px-5 py-10 sm:px-6 sm:py-16 md:min-h-dvh md:px-12 md:py-20 lg:px-16"
     >
       <div className="mx-auto flex w-full max-w-[90rem] flex-1 flex-col">
         <div className="mb-10 md:mb-14">
@@ -200,7 +212,7 @@ export default function TestimonialsSection() {
 
         <div
           ref={viewportRef}
-          className="relative flex-1 overflow-hidden pb-8"
+          className="relative snap-x snap-mandatory overflow-x-auto overflow-y-hidden overscroll-x-contain pb-8 [scrollbar-width:none] md:flex-1 md:snap-none md:overflow-hidden md:[scrollbar-width:auto] [&::-webkit-scrollbar]:hidden md:[&::-webkit-scrollbar]:block"
         >
           <div
             ref={trackRef}

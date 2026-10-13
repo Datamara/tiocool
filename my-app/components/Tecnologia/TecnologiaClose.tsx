@@ -37,7 +37,7 @@ export default function TecnologiaClose() {
       <div className="mx-auto flex max-w-[90rem] flex-col gap-10 md:flex-row md:items-end md:justify-between">
         <div className="tecnologia-close-item max-w-xl space-y-4">
           <h2 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-[0.03em] md:text-6xl">
-            Entra al hub
+            Entra al mundo tecnológico
           </h2>
           <p className="font-display text-base font-bold leading-relaxed text-black/70 md:text-lg">
             Regístrate al curso de IA o escribe para hablar de la tecnología.

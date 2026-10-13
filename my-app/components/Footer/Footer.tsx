@@ -5,25 +5,25 @@ export default function Footer() {
   return (
     <footer
       id="contacto"
-      className="bg-midnight px-6 py-16 text-white md:px-12 md:py-20 lg:px-16"
+      className="flex min-h-[70vh] flex-col justify-end bg-midnight px-6 py-20 text-white md:min-h-[80vh] md:px-12 md:py-28 lg:px-16"
     >
-      <div className="mx-auto flex max-w-[90rem] flex-col gap-12 md:flex-row md:items-end md:justify-between">
-        <div className="space-y-4">
-          <p className="font-title text-3xl font-bold uppercase tracking-[0.04em] text-white md:text-4xl">
+      <div className="mx-auto flex w-full max-w-[90rem] flex-col gap-16 md:flex-row md:items-end md:justify-between md:gap-20">
+        <div className="space-y-6">
+          <p className="font-title text-6xl font-bold uppercase leading-[0.9] tracking-[0.04em] text-white sm:text-7xl md:text-8xl lg:text-9xl">
             Tío Cool
           </p>
-          <p className="max-w-md font-display text-sm font-bold leading-relaxed text-white/70 md:text-base">
+          <p className="max-w-md font-display text-base font-bold leading-relaxed text-white/70 md:text-lg">
             Tecnología, cursos y software para asesores.
           </p>
         </div>
 
         <nav>
-          <ul className="flex flex-wrap gap-x-8 gap-y-3">
+          <ul className="flex flex-wrap gap-x-10 gap-y-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="font-display text-xs font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-70 md:text-sm"
+                  className="font-display text-sm font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-70 md:text-base"
                 >
                   {link.label}
                 </Link>
@@ -33,11 +33,11 @@ export default function Footer() {
         </nav>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-[90rem] flex-col gap-3 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45">
+      <div className="mx-auto mt-16 flex w-full max-w-[90rem] flex-col gap-4 border-t border-white/10 pt-10 sm:flex-row sm:items-center sm:justify-between md:mt-20">
+        <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
           © {new Date().getFullYear()} Tío Cool. Todos los derechos reservados.
         </p>
-        <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45">
+        <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
           Software diseñado por{" "}
           <span className="underline decoration-white/45 underline-offset-4">
             datamara

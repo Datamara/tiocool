@@ -46,7 +46,7 @@ export default function DatamaraSection() {
             Datamara Seguros
           </h2>
           <blockquote className="datamara-reveal max-w-xl border-l-2 border-royal pl-5 font-display text-lg font-bold leading-snug text-black md:text-2xl">
-            «Decide fundar Datamara Seguros para modernizar y digitalizar la
+            «Tomé la decisión de fundar Datamara Seguros para modernizar y digitalizar la
             industria de los seguros.»
           </blockquote>
           <p className="datamara-reveal max-w-xl font-display text-base font-bold leading-relaxed text-black/70 md:text-lg">

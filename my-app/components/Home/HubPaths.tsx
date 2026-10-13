@@ -13,13 +13,13 @@ const PATHS = [
   {
     href: "/blog",
     label: "Aprende",
-    text: "Ideas de IA, seguros y criterio para aplicarlas en tu cartera.",
+    text: "Ideas de IA, seguros y criterio para aplicarlas en tu negocio.",
     action: "Entrar al blog",
   },
   {
     href: "/contacto",
     label: "Contacta",
-    text: "Escribe por el curso, el software o una conversación con Luis.",
+    text: "Escribe por el curso, nuestros softwares o una conversación con Luis.",
     action: "Escribir",
   },
 ] as const;
@@ -52,7 +52,7 @@ export default function HubPaths() {
     >
       <div className="mx-auto max-w-[90rem]">
         <p className="hub-path font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
-          El hub
+          Acercate a la tecnología
         </p>
         <h2 className="hub-path mt-4 font-display text-3xl font-bold uppercase leading-[0.95] tracking-[0.03em] sm:text-4xl md:text-6xl">
           Tres caminos

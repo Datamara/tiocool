@@ -67,19 +67,23 @@ function BookCard({
       const content = contentRef.current;
       if (!card || !content) return;
 
-      gsap.to(card, {
-        scale: isActive ? 1.06 : 1,
-        zIndex: isActive ? 20 : 0,
-        duration: 0.55,
-        ease: "power3.out",
-      });
+      const mm = gsap.matchMedia();
 
-      gsap.to(content, {
-        opacity: isActive ? 1 : 0,
-        y: isActive ? 0 : 12,
-        duration: 0.4,
-        ease: "power2.out",
-        delay: isActive ? 0.12 : 0,
+      mm.add("(min-width: 768px)", () => {
+        gsap.to(card, {
+          scale: isActive ? 1.06 : 1,
+          zIndex: isActive ? 20 : 0,
+          duration: 0.55,
+          ease: "power3.out",
+        });
+
+        gsap.to(content, {
+          opacity: isActive ? 1 : 0,
+          y: isActive ? 0 : 12,
+          duration: 0.4,
+          ease: "power2.out",
+          delay: isActive ? 0.12 : 0,
+        });
       });
     },
     { dependencies: [isActive] },
@@ -88,7 +92,7 @@ function BookCard({
   return (
     <div
       ref={cardRef}
-      className="book-card relative z-0 h-56 w-40 shrink-0 overflow-hidden bg-zinc-900 will-change-transform sm:h-[clamp(14rem,36vh,24rem)] sm:w-[200px] md:h-[clamp(16rem,40vh,26rem)] md:w-[260px]"
+      className="book-card relative z-0 h-56 w-40 shrink-0 snap-start overflow-hidden bg-zinc-900 sm:h-[clamp(14rem,36vh,24rem)] sm:w-[200px] md:h-[clamp(16rem,40vh,26rem)] md:w-[260px] md:will-change-transform"
       onMouseEnter={onActivate}
       onMouseLeave={onDeactivate}
       tabIndex={0}
@@ -203,74 +207,79 @@ export default function BooksSection({
       const track = trackRef.current;
       if (!section || !viewport || !track) return;
 
-      const headingWords = gsap.utils.toArray<HTMLElement>(
-        ".books-heading-word",
-      );
-      const subheadingWords = gsap.utils.toArray<HTMLElement>(
-        ".books-subheading-word",
-      );
+      const mm = gsap.matchMedia();
 
-      const words = [...headingWords, ...subheadingWords];
+      mm.add("(min-width: 768px)", () => {
+        const headingWords = gsap.utils.toArray<HTMLElement>(
+          ".books-heading-word",
+        );
+        const subheadingWords = gsap.utils.toArray<HTMLElement>(
+          ".books-subheading-word",
+        );
+        const words = [...headingWords, ...subheadingWords];
 
-      gsap.set(words, { opacity: 0.12 });
+        gsap.set(words, { opacity: 0.12 });
 
-      gsap.to(words, {
-        opacity: 1,
-        ease: "none",
-        stagger: 0.18,
-        scrollTrigger: {
-          trigger: ".books-copy",
-          start: "top 75%",
-          end: "bottom 40%",
-          scrub: 0.6,
-        },
-      });
+        gsap.to(words, {
+          opacity: 1,
+          ease: "none",
+          stagger: 0.18,
+          scrollTrigger: {
+            trigger: ".books-copy",
+            start: "top 75%",
+            end: "bottom 40%",
+            scrub: 0.6,
+          },
+        });
 
-      const getTrackBounds = () => {
-        const viewportWidth = viewport.clientWidth;
-        const trackWidth = track.scrollWidth;
-        const overflow = Math.max(trackWidth - viewportWidth, 0);
+        const getTrackBounds = () => {
+          const viewportWidth = viewport.clientWidth;
+          const trackWidth = track.scrollWidth;
+          const overflow = Math.max(trackWidth - viewportWidth, 0);
 
-        return {
-          startX: viewportWidth + 64,
-          endX:
-            overflow > 0 ? -overflow : (viewportWidth - trackWidth) / 2,
+          return {
+            startX: viewportWidth + 64,
+            endX: overflow > 0 ? -overflow : (viewportWidth - trackWidth) / 2,
+          };
         };
-      };
 
-      gsap.set(track, { x: () => getTrackBounds().startX });
-      gsap.set(".book-card", { rotation: 30, transformOrigin: "50% 100%" });
+        gsap.set(track, { x: () => getTrackBounds().startX });
+        gsap.set(".book-card", { rotation: 30, transformOrigin: "50% 100%" });
 
-      const getScrollDistance = () => {
-        const { startX, endX } = getTrackBounds();
-        return Math.max(Math.abs(endX - startX) * 1.1, window.innerHeight * 0.5);
-      };
+        const getScrollDistance = () => {
+          const { startX, endX } = getTrackBounds();
+          return Math.max(
+            Math.abs(endX - startX) * 1.1,
+            window.innerHeight * 0.5,
+          );
+        };
 
-      const scrollTween = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${getScrollDistance()}`,
-          pin: true,
-          scrub: 0.45,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
+        const scrollTween = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${getScrollDistance()}`,
+            pin: true,
+            scrub: 0.45,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        scrollTween.fromTo(
+          track,
+          { x: () => getTrackBounds().startX },
+          { x: () => getTrackBounds().endX, ease: "none", force3D: true },
+          0,
+        );
+
+        scrollTween.fromTo(
+          ".book-card",
+          { rotation: 30 },
+          { rotation: 0, ease: "none", stagger: 0.06, force3D: true },
+          0,
+        );
       });
-
-      scrollTween.fromTo(
-        track,
-        { x: () => getTrackBounds().startX },
-        { x: () => getTrackBounds().endX, ease: "none", force3D: true },
-        0,
-      );
-
-      scrollTween.fromTo(
-        ".book-card",
-        { rotation: 30 },
-        { rotation: 0, ease: "none", stagger: 0.06, force3D: true },
-        0,
-      );
     },
     { scope: sectionRef },
   );
@@ -279,7 +288,7 @@ export default function BooksSection({
     <section
       ref={sectionRef}
       id="libros"
-      className="flex min-h-dvh flex-col justify-start overflow-x-clip bg-white px-4 py-12 sm:px-6 md:justify-center md:px-12 md:py-12 lg:px-16"
+      className="flex flex-col justify-start overflow-x-clip bg-white px-4 py-12 sm:px-6 md:min-h-dvh md:justify-center md:px-12 md:py-12 lg:px-16"
     >
       <div className="mx-auto flex w-full max-w-[90rem] flex-col items-center justify-center gap-8 md:gap-10 lg:gap-12">
         <div className="books-copy max-w-6xl space-y-4 text-center md:space-y-6">
@@ -297,7 +306,7 @@ export default function BooksSection({
 
         <div
           ref={viewportRef}
-          className="books-gallery relative w-full overflow-hidden py-16 md:py-24"
+          className="books-gallery relative w-full snap-x snap-mandatory overflow-x-auto overflow-y-hidden overscroll-x-contain py-4 [scrollbar-width:none] md:snap-none md:overflow-hidden md:py-24 md:[scrollbar-width:auto] [&::-webkit-scrollbar]:hidden md:[&::-webkit-scrollbar]:block"
           onMouseLeave={() => setActiveId(defaultBookId)}
         >
           <div
