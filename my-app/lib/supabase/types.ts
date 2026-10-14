@@ -43,6 +43,11 @@ export type ContactSubmissionInsert = {
   source?: string;
 };
 
+export type AdminUserRow = {
+  user_id: string;
+  created_at: string;
+};
+
 export type Database = {
   public: {
     Tables: {
@@ -75,6 +80,12 @@ export type Database = {
         Row: ContactSubmissionInsert & { id: string; created_at: string };
         Insert: ContactSubmissionInsert;
         Update: Partial<ContactSubmissionInsert>;
+        Relationships: [];
+      };
+      admin_users: {
+        Row: AdminUserRow;
+        Insert: { user_id: string; created_at?: string };
+        Update: Partial<AdminUserRow>;
         Relationships: [];
       };
     };

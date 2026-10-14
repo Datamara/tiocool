@@ -8,9 +8,13 @@ import { navLinks } from "./navLinks";
 
 type NavbarProps = {
   theme?: "light" | "dark";
+  show?: "always" | "mobile" | "desktop";
 };
 
-export default function Navbar({ theme: _theme = "light" }: NavbarProps) {
+export default function Navbar({
+  theme: _theme = "light",
+  show = "always",
+}: NavbarProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -49,7 +53,11 @@ export default function Navbar({ theme: _theme = "light" }: NavbarProps) {
   }, [open]);
 
   return (
-    <header className="relative z-50 w-full shrink-0 border-b border-black/5 bg-white">
+    <header
+      className={`sticky top-0 z-50 w-full shrink-0 border-b border-black/5 bg-white md:static ${
+        show === "mobile" ? "md:hidden" : ""
+      } ${show === "desktop" ? "hidden md:block" : ""}`}
+    >
       <nav className="flex w-full items-center justify-between px-5 py-4 md:items-end md:px-12 md:py-8">
         <Link
           href="/"

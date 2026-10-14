@@ -295,12 +295,12 @@ export default function BooksSection({
           <RevealWords
             className="books-heading font-display text-xl font-bold leading-[1.15] tracking-[0.01em] text-black sm:text-2xl md:text-4xl lg:text-3xl"
             wordClassName="books-heading-word"
-            text="Los libros son la herramienta para construir confianza en seguros."
+            text="Libros para construir confianza en la industria de los seguros."
           />
           <RevealWords
             className="books-subheading font-display text-base font-bold leading-[1.25] tracking-[0.01em] text-black/70 sm:text-lg md:text-2xl"
             wordClassName="books-subheading-word"
-            text="La tecnología, y cómo la usas, define cómo te reconocen, cómo confían en ti y cómo crece tu negocio."
+            text="Criterio y tecnología para trabajar el negocio en esta época."
           />
         </div>
 

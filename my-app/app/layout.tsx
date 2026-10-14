@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
+import GoogleTags from "@/components/Analytics/GoogleTags";
 import "./globals.css";
 
 const sora = Sora({
@@ -17,7 +18,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="es" className={`${sora.variable} h-full antialiased`}>
-      <body className="min-h-full bg-white font-body text-black">{children}</body>
+      <body className="min-h-full bg-white font-body text-black">
+        <GoogleTags />
+        {children}
+      </body>
     </html>
   );
 }

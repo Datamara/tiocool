@@ -13,7 +13,7 @@ export default function Footer() {
             Tío Cool
           </p>
           <p className="max-w-md font-display text-base font-bold leading-relaxed text-white/70 md:text-lg">
-            Tecnología, cursos y software para asesores.
+            Tecnología, cursos y software para la industria de los seguros.
           </p>
         </div>
 
@@ -34,9 +34,17 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-16 flex w-full max-w-[90rem] flex-col gap-4 border-t border-white/10 pt-10 sm:flex-row sm:items-center sm:justify-between md:mt-20">
-        <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
-          © {new Date().getFullYear()} Tío Cool. Todos los derechos reservados.
-        </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
+          <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
+            © {new Date().getFullYear()} Tío Cool. Todos los derechos reservados.
+          </p>
+          <Link
+            href="/terminos"
+            className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/70 transition-opacity hover:opacity-70 md:text-sm"
+          >
+            Términos y condiciones
+          </Link>
+        </div>
         <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
           Software diseñado por{" "}
           <span className="underline decoration-white/45 underline-offset-4">

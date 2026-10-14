@@ -170,3 +170,55 @@ on conflict (slug) do update set
   buy_url = excluded.buy_url,
   sort_order = excluded.sort_order,
   is_active = excluded.is_active;
+
+-- Admin portal. See also supabase/migrations/20261014131500_admin_portal.sql
+create table if not exists public.admin_users (
+  user_id uuid primary key references auth.users (id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+
+alter table public.admin_users enable row level security;
+
+create index if not exists contact_submissions_created_at_idx
+  on public.contact_submissions (created_at desc);
+
+create index if not exists course_interests_created_at_idx
+  on public.course_interests (created_at desc);
+
+create or replace function public.is_admin()
+returns boolean
+language sql
+stable
+security definer
+set search_path = public
+as $$
+  select exists (
+    select 1
+    from public.admin_users
+    where user_id = auth.uid()
+  );
+$$;
+
+revoke all on function public.is_admin() from public;
+grant execute on function public.is_admin() to authenticated;
+
+drop policy if exists "Admins read own membership" on public.admin_users;
+create policy "Admins read own membership"
+on public.admin_users
+for select
+to authenticated
+using (user_id = auth.uid());
+
+drop policy if exists "Admins read contact submissions" on public.contact_submissions;
+create policy "Admins read contact submissions"
+on public.contact_submissions
+for select
+to authenticated
+using (public.is_admin());
+
+drop policy if exists "Admins read course interests" on public.course_interests;
+create policy "Admins read course interests"
+on public.course_interests
+for select
+to authenticated
+using (public.is_admin());

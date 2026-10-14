@@ -28,7 +28,7 @@ export default function BlogHero() {
     >
       <div className="mx-auto max-w-[90rem]">
         <p className="blog-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
-          Para asesores
+          Salta a la tecnología
         </p>
         <h1 className="blog-hero-title mt-6 font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-black md:text-7xl lg:text-8xl">
           Aprende

@@ -30,15 +30,19 @@ export default function TecnologiaHero() {
       <div className="mx-auto flex max-w-[90rem] flex-col gap-8">
         <DatamaraLogo className="tecnologia-hero-logo" />
         <p className="tecnologia-hero-label font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
-          Tecnología
+          Cofundador de Datamara Seguros
         </p>
         <h1 className="tecnologia-hero-title font-display text-5xl font-bold uppercase leading-[0.92] tracking-[0.02em] text-black md:text-7xl lg:text-8xl">
           Datamara
           <br />
           Seguros
         </h1>
-        <p className="tecnologia-hero-sub max-w-xl font-display text-base font-bold leading-relaxed text-black/70 md:text-xl">
-          Softwares para la industria aseguradora.
+      </div>
+
+      <div className="mx-auto mt-16 max-w-[90rem] border-t border-royal/20 pt-12 md:mt-24 md:pt-16">
+        <p className="tecnologia-hero-sub max-w-4xl font-display text-2xl font-bold leading-[1.15] text-black sm:text-3xl md:text-5xl">
+          Datamara Seguros está transformando la tecnología a través de la IA
+          en la industria.
         </p>
       </div>
     </section>

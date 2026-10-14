@@ -94,11 +94,10 @@ export default function AboutSection() {
           />
 
           <div className="about-bio flex flex-col gap-5">
-            <div className="max-w-sm space-y-2 font-display text-sm leading-relaxed text-black/70 md:text-base">
-              <p>Libros para blindar tu mentalidad.</p>
-              <p>Cursos para multiplicar resultados con IA.</p>
-              <p>Software para trabajar el negocio con tecnología.</p>
-            </div>
+            <p className="max-w-sm font-display text-sm font-bold leading-relaxed text-black/70 md:text-base">
+              Luis Lara Esqueda. Décadas en la industria de los seguros. Hoy
+              pone la tecnología en el centro del negocio.
+            </p>
             <Link
               href="/historia"
               className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal transition-colors hover:text-azure md:text-xs"

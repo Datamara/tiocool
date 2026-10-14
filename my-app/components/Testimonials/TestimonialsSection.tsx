@@ -200,7 +200,7 @@ export default function TestimonialsSection() {
       <div className="mx-auto flex w-full max-w-[90rem] flex-1 flex-col">
         <div className="mb-10 md:mb-14">
           <h2 className="font-display text-3xl font-bold uppercase tracking-[0.04em] text-black sm:text-4xl md:text-5xl lg:text-6xl">
-            Comentarios
+            Voces de la industria
           </h2>
           <div className="mt-6 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-white">
             <div

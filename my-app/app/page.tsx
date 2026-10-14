@@ -4,6 +4,8 @@ import Footer from "@/components/Footer/Footer";
 import HeroSection from "@/components/Hero/HeroSection";
 import DatamaraSection from "@/components/Home/DatamaraSection";
 import HubPaths from "@/components/Home/HubPaths";
+import TechnologyEntrySection from "@/components/Home/TechnologyEntrySection";
+import Navbar from "@/components/Navbar/Navbar";
 import TestimonialsSection from "@/components/Testimonials/TestimonialsSection";
 import { AI_COURSE_ITEM, getBooks } from "@/lib/books";
 
@@ -12,14 +14,18 @@ export default async function Home() {
   const defaultBookId = AI_COURSE_ITEM.id;
 
   return (
-    <div className="overflow-x-clip">
-      <HeroSection />
-      <DatamaraSection />
-      <HubPaths />
-      <AboutSection />
-      <BooksSection books={books} defaultBookId={defaultBookId} />
-      <TestimonialsSection />
-      <Footer />
+    <div>
+      <Navbar show="mobile" />
+      <div className="overflow-x-clip">
+        <HeroSection />
+        <AboutSection />
+        <TechnologyEntrySection />
+        <DatamaraSection />
+        <HubPaths />
+        <BooksSection books={books} defaultBookId={defaultBookId} />
+        <TestimonialsSection />
+        <Footer />
+      </div>
     </div>
   );
 }

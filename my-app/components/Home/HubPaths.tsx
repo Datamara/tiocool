@@ -13,13 +13,13 @@ const PATHS = [
   {
     href: "/blog",
     label: "Aprende",
-    text: "Ideas de IA, seguros y criterio para aplicarlas en tu negocio.",
+    text: "Ideas de IA, seguros y criterio para la industria.",
     action: "Entrar al blog",
   },
   {
     href: "/contacto",
     label: "Contacta",
-    text: "Escribe por el curso, nuestros softwares o una conversación con Luis.",
+    text: "Por el curso, el software o una conversación con Luis.",
     action: "Escribir",
   },
 ] as const;
@@ -52,10 +52,10 @@ export default function HubPaths() {
     >
       <div className="mx-auto max-w-[90rem]">
         <p className="hub-path font-display text-[10px] font-bold uppercase tracking-[0.28em] text-royal md:text-xs">
-          Acercate a la tecnología
+          El siguiente paso
         </p>
         <h2 className="hub-path mt-4 font-display text-3xl font-bold uppercase leading-[0.95] tracking-[0.03em] sm:text-4xl md:text-6xl">
-          Tres caminos
+          Por dónde seguir
         </h2>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
@@ -85,8 +85,8 @@ export default function HubPaths() {
                 Curso de IA
               </h3>
               <p className="font-display text-sm font-bold leading-relaxed text-white/85 md:text-base">
-                Inteligencia Artificial aplicada al sector asegurador. El
-                registro ya está abierto.
+                Cómo Luis aprendió a poner la IA en la industria. El registro
+                ya está abierto.
               </p>
               <CourseCountdown />
             </div>

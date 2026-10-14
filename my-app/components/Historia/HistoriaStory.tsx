@@ -16,41 +16,47 @@ export default function HistoriaStory() {
       const section = sectionRef.current;
       if (!section) return;
 
-      gsap.from(".historia-story-quote", {
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 70%",
-          toggleActions: "play none none reverse",
-        },
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 1024px)", () => {
+        gsap.from(".historia-story-quote", {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        gsap.from(".historia-story-block", {
+          y: 50,
+          opacity: 0,
+          duration: 0.9,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".historia-story-grid",
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        gsap.to(".historia-story-photo", {
+          y: -40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2,
+          },
+        });
       });
 
-      gsap.from(".historia-story-block", {
-        y: 50,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".historia-story-grid",
-          start: "top 75%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-      gsap.to(".historia-story-photo", {
-        y: -40,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.2,
-        },
-      });
+      return () => mm.revert();
     },
     { scope: sectionRef },
   );
@@ -58,16 +64,16 @@ export default function HistoriaStory() {
   return (
     <section
       ref={sectionRef}
-      className="flex min-h-screen max-h-screen flex-col justify-center overflow-hidden bg-lavender px-6 py-4 md:px-12 md:py-6 lg:px-16"
+      className="flex flex-col bg-lavender px-6 py-16 md:px-12 md:py-20 lg:min-h-screen lg:max-h-screen lg:justify-center lg:overflow-hidden lg:py-6 lg:px-16"
     >
       <div className="mx-auto w-full max-w-[90rem]">
-        <blockquote className="historia-story-quote mb-6 max-w-3xl font-display text-xl font-bold leading-[1.2] tracking-[0.02em] text-black md:mb-8 md:text-2xl lg:text-3xl">
+        <blockquote className="historia-story-quote mb-10 max-w-3xl font-display text-2xl font-bold leading-[1.25] tracking-[0.02em] text-black lg:mb-8 lg:text-3xl">
           «La mentalidad te mantiene en el juego; la tecnología te hace
           ganarlo».
         </blockquote>
 
-        <div className="historia-story-grid grid items-center gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
-          <div className="historia-story-photo relative mx-auto aspect-[3/4] max-h-[34vh] w-full max-w-xs overflow-hidden lg:mx-0 lg:max-h-[42vh] lg:max-w-sm">
+        <div className="historia-story-grid grid items-start gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-10">
+          <div className="historia-story-photo relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden lg:mx-0 lg:max-h-[42vh] lg:max-w-sm">
             <Image
               src="/about/about_2.jpg"
               alt="Libros y escritura"
@@ -77,12 +83,12 @@ export default function HistoriaStory() {
             />
           </div>
 
-          <div className="space-y-4 md:space-y-5">
-            <div className="historia-story-block space-y-2">
-              <h2 className="font-display text-lg font-bold uppercase tracking-[0.04em] text-black md:text-xl">
+          <div className="space-y-8 lg:space-y-5">
+            <div className="historia-story-block space-y-3 lg:space-y-2">
+              <h2 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-black lg:text-xl">
                 Luis Lara Esqueda
               </h2>
-              <p className="font-display text-sm font-bold leading-relaxed text-black md:text-base">
+              <p className="font-display text-base font-bold leading-relaxed text-black md:text-base">
                 Nació en Colima en 1959. Escritor de relatos que conectan con
                 la resiliencia, el crecimiento y la superación. En sus libros
                 comparte experiencias sobre el cambio y la capacidad de
@@ -90,16 +96,16 @@ export default function HistoriaStory() {
               </p>
             </div>
 
-            <div className="historia-story-block space-y-2">
-              <p className="font-display text-sm font-bold leading-relaxed text-black md:text-base">
+            <div className="historia-story-block">
+              <p className="font-display text-base font-bold leading-relaxed text-black md:text-base">
                 Antes del año 2000 fue director de BBVA Toluca. En el 2000
                 fundó la promotoría Kutsol, donde construyó décadas de
                 liderazgo en el sector financiero y asegurador.
               </p>
             </div>
 
-            <div className="historia-story-block space-y-2">
-              <p className="font-display text-sm font-bold leading-relaxed text-black md:text-base">
+            <div className="historia-story-block">
+              <p className="font-display text-base font-bold leading-relaxed text-black md:text-base">
                 Conocido como El Tío Cool, hoy pone la tecnología en manos de
                 los asesores: narrativa, coaching e Inteligencia Artificial
                 para blindar la mentalidad y multiplicar resultados en la era
@@ -108,7 +114,7 @@ export default function HistoriaStory() {
             </div>
 
             <div className="historia-story-block">
-              <p className="font-display text-xs font-bold uppercase tracking-[0.12em] text-black md:text-sm">
+              <p className="font-display text-sm font-bold uppercase leading-relaxed tracking-[0.12em] text-black md:text-sm">
                 Heráclito dijo: «Carácter es destino». Ese camino se lee en
                 cada página, cada conferencia y cada conversación con quienes
                 buscan reinventarse.

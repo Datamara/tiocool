@@ -35,29 +35,21 @@ export default function TecnologiaClose() {
       className="bg-white px-6 py-20 text-black md:px-12 md:py-28 lg:px-16"
     >
       <div className="mx-auto flex max-w-[90rem] flex-col gap-10 md:flex-row md:items-end md:justify-between">
-        <div className="tecnologia-close-item max-w-xl space-y-4">
+        <div className="tecnologia-close-item max-w-3xl space-y-4">
           <h2 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-[0.03em] md:text-6xl">
-            Entra al mundo tecnológico
+            Vamos a crear mucho más
           </h2>
           <p className="font-display text-base font-bold leading-relaxed text-black/70 md:text-lg">
-            Regístrate al curso de IA o escribe para hablar de la tecnología.
+            Únete al blog para no perderte las novedades.
           </p>
         </div>
 
-        <div className="tecnologia-close-item flex flex-col gap-4 sm:flex-row">
-          <Link
-            href="/cursos"
-            className="bg-royal px-6 py-4 text-center font-display text-[10px] font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-azure md:text-xs"
-          >
-            Registrarme al curso
-          </Link>
-          <Link
-            href="/contacto"
-            className="border border-royal px-6 py-4 text-center font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal transition-colors hover:bg-royal hover:text-white md:text-xs"
-          >
-            Escribir
-          </Link>
-        </div>
+        <Link
+          href="/blog"
+          className="tecnologia-close-item bg-royal px-6 py-4 text-center font-display text-[10px] font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-azure md:text-xs"
+        >
+          Únete al blog
+        </Link>
       </div>
     </section>
   );

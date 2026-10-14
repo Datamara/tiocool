@@ -1,19 +1,18 @@
 "use client";
 
 import { useRef, useState, useTransition } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { submitContact } from "@/app/actions/contact";
+import { trackEvent } from "@/lib/analytics";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://www.instagram.com" },
-  { label: "Facebook", href: "https://www.facebook.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com" },
-  { label: "YouTube", href: "https://www.youtube.com" },
-  { label: "TikTok", href: "https://www.tiktok.com" },
+  { label: "Instagram", href: "https://www.instagram.com/mente_universo_freesoul/"},
+  { label: "Facebook", href: "https://www.facebook.com/LuisLara.freesoul/?locale=es_LA" },
 ];
 
 type ContactSectionProps = {
@@ -54,6 +53,7 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
       const result = await submitContact(formData);
 
       if (result.success) {
+        trackEvent("generate_lead", { form: "contacto", source });
         setSubmitted(true);
         return;
       }
@@ -89,7 +89,7 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
               href="tel:+529992338183"
               className="inline-block font-display text-2xl font-bold uppercase tracking-[0.06em] text-black transition-opacity hover:opacity-60 md:text-3xl"
             >
-              999 233 8183
+              5555024682
             </a>
           </div>
 
@@ -153,6 +153,13 @@ export default function ContactSection({ source = "contacto" }: ContactSectionPr
                 >
                   {isPending ? "Enviando..." : "Enviar"}
                 </button>
+                <p className="font-display text-[11px] font-bold leading-relaxed text-black/50">
+                  Al enviar, aceptas los{" "}
+                  <Link href="/terminos" className="text-royal hover:text-azure">
+                    términos y condiciones
+                  </Link>
+                  .
+                </p>
               </form>
             )}
           </div>

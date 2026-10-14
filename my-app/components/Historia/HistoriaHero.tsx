@@ -26,9 +26,9 @@ export default function HistoriaHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen max-h-screen flex-col justify-center overflow-hidden bg-white px-6 py-4 md:px-12 md:py-8 lg:px-16"
+      className="relative flex flex-col justify-center bg-white px-6 py-16 md:px-12 md:py-20 lg:min-h-screen lg:max-h-screen lg:overflow-hidden lg:py-8 lg:px-16"
     >
-      <div className="mx-auto grid max-w-[90rem] items-end gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <div className="mx-auto grid max-w-[90rem] items-end gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div className="space-y-6 md:space-y-8">
           <h1 className="historia-hero-title font-display text-5xl font-bold uppercase leading-[0.95] tracking-[0.02em] text-black md:text-7xl lg:text-8xl">
             El

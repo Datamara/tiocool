@@ -1,10 +1,12 @@
 "use client";
 
 import { useRef, useState, useTransition } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { submitCourseInterest } from "@/app/actions/course";
+import { trackEvent } from "@/lib/analytics";
 import AiBackground from "./AiBackground";
 import CourseCountdown from "./CourseCountdown";
 
@@ -62,6 +64,10 @@ export default function CourseRegister() {
       const result = await submitCourseInterest(formData);
 
       if (result.success) {
+        trackEvent("generate_lead", {
+          form: "curso",
+          course: "ia-completo-2026",
+        });
         setSubmitted(true);
         return;
       }
@@ -175,6 +181,13 @@ export default function CourseRegister() {
               >
                 {isPending ? "Enviando..." : "Registrar interés"}
               </button>
+              <p className="font-display text-[11px] font-bold leading-relaxed text-black/50">
+                Al registrar interés, aceptas los{" "}
+                <Link href="/terminos" className="text-royal hover:text-azure">
+                  términos y condiciones
+                </Link>
+                .
+              </p>
             </form>
           )}
         </div>

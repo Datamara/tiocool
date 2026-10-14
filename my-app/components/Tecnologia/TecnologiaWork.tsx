@@ -1,26 +1,65 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
-const POINTS = [
+const CREATIONS = [
   {
-    label: "Software",
-    text: "Herramientas hechas para asesores, promotorías y equipos que viven de los seguros.",
+    name: "Asygurare",
+    text: "El ecosistema para asesores de seguros. Cartera, agenda y Apolo, el agente de IA que trabaja con ellos.",
+    href: "https://www.asygurare.com/",
+    action: "Visitar Asygurare",
+    external: true,
+    image: "/datamara_seguros/asygurare.jpg",
   },
   {
-    label: "Industria",
-    text: "La tecnología nace del sector asegurador, para el trabajo diario de quien asesora.",
+    name: "KanKanKan",
+    text: "Seguro para perros, pensado para quienes los consideran familia. Respaldado por GNP México.",
+    href: "https://www.kankankan.com.mx/",
+    action: "Visitar KanKanKan",
+    external: true,
+    image: "/datamara_seguros/kankankan.png",
   },
   {
-    label: "Luis Lara",
-    text: "Pone el software en manos de los asesores, junto con el curso y los libros.",
+    name: "Curso de IA",
+    text: "Inteligencia artificial aplicada al sector asegurador.",
+    href: "/cursos",
+    action: "Registra interés",
+    external: false,
+    image: "/datamara_seguros/curso_ia.jpg",
   },
-];
+] as const;
+
+function CreationPhoto({ src, alt }: { src: string; alt: string }) {
+  const [missing, setMissing] = useState(false);
+
+  return (
+    <div className="relative aspect-[4/3] overflow-hidden bg-lavender">
+      {missing ? (
+        <div className="flex h-full items-center justify-center">
+          <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal/70">
+            Foto
+          </p>
+        </div>
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          className="absolute inset-0 h-full w-full object-cover"
+          ref={(node) => {
+            if (node?.complete && node.naturalWidth === 0) setMissing(true);
+          }}
+          onError={() => setMissing(true)}
+        />
+      )}
+    </div>
+  );
+}
 
 export default function TecnologiaWork() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -61,30 +100,38 @@ export default function TecnologiaWork() {
       className="bg-lavender px-6 py-20 md:px-12 md:py-28 lg:px-16"
     >
       <div className="mx-auto max-w-[90rem]">
-        <div className="tecnologia-work-copy max-w-3xl space-y-6">
+        <div className="tecnologia-work-copy max-w-3xl">
           <h2 className="font-display text-3xl font-bold uppercase leading-[1.05] tracking-[0.03em] text-black md:text-5xl">
-            Tecnología que el asesor puede usar.
+            ¿Qué hemos creado?
           </h2>
-          <p className="font-display text-base font-bold leading-relaxed text-black/70 md:text-lg">
-            Datamara Seguros desarrolla software para la industria. Es
-            tecnología hecha para asesores, promotorías y equipos que viven de
-            los seguros. Luis Lara la comparte en el mismo lugar donde se
-            aprende y se registra al curso.
-          </p>
         </div>
 
         <ul className="tecnologia-points mt-14 grid gap-6 md:grid-cols-3">
-          {POINTS.map((point) => (
+          {CREATIONS.map((item) => (
             <li
-              key={point.label}
-              className="tecnologia-point border border-royal/15 bg-white p-6 md:p-8"
+              key={item.name}
+              className="tecnologia-point flex flex-col bg-white p-3 md:p-4"
             >
-              <p className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal md:text-xs">
-                {point.label}
-              </p>
-              <p className="mt-4 font-display text-sm font-bold leading-relaxed text-black/75 md:text-base">
-                {point.text}
-              </p>
+              <CreationPhoto src={item.image} alt={item.name} />
+              <div className="flex flex-1 flex-col justify-between gap-8 px-3 pt-6 pb-3 md:px-4 md:pt-8 md:pb-4">
+                <div>
+                  <h3 className="font-display text-2xl font-bold uppercase tracking-[0.04em] text-black md:text-3xl">
+                    {item.name}
+                  </h3>
+                  <p className="mt-4 font-display text-sm font-bold leading-relaxed text-black/70 md:text-base">
+                    {item.text}
+                  </p>
+                </div>
+                <Link
+                  href={item.href}
+                  {...(item.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-royal transition-colors hover:text-azure md:text-xs"
+                >
+                  {item.action}
+                </Link>
+              </div>
             </li>
           ))}
         </ul>

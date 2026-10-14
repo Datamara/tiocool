@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
-import RotatingText from "@/components/Hero/RotatingText";
 
 const HERO_IMAGE = "/home/tio_hero.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex h-dvh flex-col overflow-hidden bg-(--background)">
+    <section className="relative flex h-[calc(100svh-3.5625rem)] flex-col overflow-hidden bg-(--background) sm:h-[calc(100svh-3.875rem)] md:h-svh">
       <div className="relative z-20 shrink-0 bg-(--background)">
-        <Navbar />
+        <Navbar show="desktop" />
       </div>
 
       <main className="relative min-h-0 flex-1 overflow-hidden">
@@ -33,7 +32,9 @@ export default function HeroSection() {
               <br />
               para los seguros
             </h1>
-            <RotatingText />
+            <p className="max-w-[18rem] font-title text-base font-bold uppercase leading-tight tracking-[0.06em] text-black sm:max-w-none sm:text-xl md:text-2xl md:tracking-[0.08em] md:text-[#E3E7FC] xl:text-xl">
+              La industria ya no se trabaja igual.
+            </p>
           </div>
         </div>
       </main>
