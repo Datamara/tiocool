@@ -45,11 +45,23 @@ export default function Footer() {
             Términos y condiciones
           </Link>
         </div>
-        <p className="font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
-          Software diseñado por{" "}
-          <span className="underline decoration-white/45 underline-offset-4">
-            datamara
-          </span>
+        <p className="flex flex-wrap items-center gap-x-3 gap-y-2 font-display text-xs font-bold uppercase tracking-[0.14em] text-white/45 md:text-sm">
+          Diseñado por
+          <a
+            href="https://www.datamara.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative block h-6 w-[9.84rem] shrink-0 overflow-hidden opacity-90 transition-opacity hover:opacity-100 sm:h-7 sm:w-[11.48rem] md:h-8 md:w-[13.12rem]"
+          >
+            <span className="sr-only">Datamara</span>
+            {/* The file is a square with the wordmark in the middle. These offsets crop to the letters. */}
+            <img
+              src="/datamara/datamara_footer.png"
+              alt=""
+              className="pointer-events-none absolute h-[1047%] w-auto max-w-none"
+              style={{ left: "-29.8%", top: "-473%" }}
+            />
+          </a>
         </p>
       </div>
     </footer>

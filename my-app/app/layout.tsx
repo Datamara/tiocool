@@ -10,6 +10,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.tiocool.com"),
   title: "Tío Cool",
   description:
     "Hub de tecnología para la industria de los seguros. Cursos de IA, Datamara Seguros y aprendizaje con Luis Lara.",
