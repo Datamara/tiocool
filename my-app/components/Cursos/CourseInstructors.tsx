@@ -14,23 +14,24 @@ const INSTRUCTORS = [
     name: "Luis Lara Esqueda",
     role: "El Tío Cool",
     bio: "Comparte mentalidad y tecnología con asesores y líderes del sector.",
-    image: "/luis/luislara.jpeg",
+    image: "/curso/curso_luis.jpg",
+    position: "object-top",
     local: true,
   },
   {
     name: "Bernardo García Zermeño",
-    role: "Software en Datamara",
-    bio: "Construye el software de Datamara Seguros. Soluciones que escalan con precisión.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+    role: "Cofundador Asygurare",
+    bio: "Ingeniero en software y empresario. Construye Asygurare: cartera, agenda y Apolo, el agente de IA de los asesores.",
+    image: "/curso/bernardo.jpeg",
+    position: "object-center",
     local: false,
   },
   {
-    name: "Adrián Cedillo",
-    role: "Fundador de Doko · FinTech Cedi",
-    bio: "Fintech y productos digitales que simplifican finanzas para asesores y empresas.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80",
+    name: "Mariano Lara García de Alba",
+    role: "Cofundador de Datamara",
+    bio: "Emprendedor. Construye software e inteligencia artificial para que las empresas los usen en su día a día.",
+    image: "/curso/mariano.jpeg",
+    position: "object-center",
     local: false,
   },
 ];
@@ -144,7 +145,7 @@ export default function CourseInstructors() {
                     alt={instructor.name}
                     fill
                     sizes="(max-width: 768px) 82vw, 24rem"
-                    className="object-cover object-center grayscale"
+                    className={`object-cover grayscale ${instructor.position}`}
                     unoptimized={!instructor.local}
                     onLoad={handleImageLoad}
                   />

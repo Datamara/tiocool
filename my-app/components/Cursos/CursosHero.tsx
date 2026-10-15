@@ -120,7 +120,7 @@ export default function CursosHero() {
             <div className="cursos-hero-orbit-inner absolute inset-8 rounded-full border border-royal/15 md:inset-10" />
             <div className="relative z-10 aspect-square w-[72%]">
               <Image
-                src="/luis/curso_ia.jpg"
+                src="/curso/datamara_curso.png"
                 alt="Cerebro digital — Curso de IA"
                 fill
                 priority

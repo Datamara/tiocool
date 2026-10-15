@@ -18,8 +18,8 @@ const CREATIONS = [
     image: "/datamara_seguros/asygurare.jpg",
   },
   {
-    name: "KanKanKan",
-    text: "Seguro para perros, pensado para quienes los consideran familia. Respaldado por GNP México.",
+    name: "KanCanKan",
+    text: "Seguro para perros, pensado para quienes los consideran familia.",
     href: "https://www.kankankan.com.mx/",
     action: "Visitar KanKanKan",
     external: true,
